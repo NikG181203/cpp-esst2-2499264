@@ -21,14 +21,15 @@ void addMyNames(T &cont)
 int main()
 {
     std::set<std::string> names;
-    std::unordered_set<std::string> unordered_names;
+    std::unordered_set<std::string> unordered_names; //kein Hashing für Speichersuche nötig
+    //unsorted ist schneller, da keine reihnfolge gesucht werden muss -> random durch hashing
 
     std::chrono::duration<double, std::milli> durationOrdered_ms;
     std::chrono::duration<double, std::milli> durationUnordered_ms;
 
     {
         auto t1 = std::chrono::high_resolution_clock::now();
-        addMyNames(names);
+        addMyNames(names); //bei älteren Compilern lambdy nicht mit template verbinden!
         auto t2 = std::chrono::high_resolution_clock::now();
         durationOrdered_ms = t2 - t1;
     }

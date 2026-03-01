@@ -4,8 +4,8 @@
 
 int main()
 {
-    std::list<int> myList;
-    std::forward_list<int> myForwardList;
+    std::list<int> myList; //doppelt verkettete Liste -> front und back sind head und pushbar
+    std::forward_list<int> myForwardList; //ienfach verkettete Liste -> nur front zum push 
 
     for(int i=0 ; i<7 ; i++)
     {
@@ -23,13 +23,13 @@ int main()
         myList.push_front(200+i);
     }
 
-    auto it = myList.end();
+    auto it = myList.end(); //kein Zugriff mit [] -> Iterator muss sich geholt werden für Austausch
     it--;
-    myList.insert(it, 500);
+    myList.insert(it, 500); //fügt an stelle hinzu
 
     it--; it--;
 
-    it = myList.erase(it);
+    it = myList.erase(it); //Iterator wird beim Löschen gespeichert
     it--;
     myList.erase(it);
 

@@ -7,7 +7,7 @@ int main()
 {
     std::vector<std::string> data;
 
-    try
+    try //Durchlauf wird versucht
     {
         data.push_back("Test");
         data.push_back("Test2");
@@ -19,13 +19,13 @@ int main()
         data.push_back("Test5");
 
     }
-    catch(const std::exception &e)
+    catch(const std::exception &e) //bekannter Fehler erkannt
     {
-        std::cout << e.what() << std::endl;
+        std::cout << e.what() << std::endl; //.what() gibt Art des Fehlers aus
 
         data.push_back("Test after exception thrown");
     }
-    catch(...)
+    catch(...) //allgemein Fehler erkannt
     {
         std::cout << "Unknown Exception caught!" << std::endl;
     }

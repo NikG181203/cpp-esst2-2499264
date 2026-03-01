@@ -9,7 +9,7 @@ T add (const T a, const T b)
 
 int main()
 {    
-    float fSum = add<int>(3.5f, 3.6f);
+    float fSum = add<int>(3.5f, 3.6f); //zwingt übergabe als int -> typecasting
     float iSum = add<float>(3, 3);
 
     std::cout << fSum << std::endl;

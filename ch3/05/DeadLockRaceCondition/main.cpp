@@ -11,7 +11,7 @@ int main()
         int c=0;
 
         std::thread t1([&] {
-            //mutex.lock();
+            //mutex.lock(); // ohne lock wird das ergebnis falsch sein, teils parallele threads -> nur einer schreibt!
             std::cout << "1. Lock." << std::endl;
 
 
@@ -52,7 +52,7 @@ int main()
 
     return 0;
 
-    // Deadlock
+    // Deadlock -> Programm wird nie beendet!!!
     {
     std::mutex m1, m2;
 

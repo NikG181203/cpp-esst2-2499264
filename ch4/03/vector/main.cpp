@@ -4,13 +4,13 @@
 
 int main()
 {
-    std::vector<int> myRange;
+    std::vector<int> myRange; //fester Datentyp, dynamische Größe
 
     for(int i=0 ; i<18 ; i++)
     {
-        myRange.push_back(200);
-        std::cout << "The capacity is " << myRange.capacity() << std::endl;
-    }
+        myRange.push_back(200); //Element am Ende anhängen
+        std::cout << "The capacity is " << myRange.capacity() << std::endl; //gibt Größe an
+    } //Größe immer verdoppelt bei zu viel Inhalt
 
     std::cout << std::endl;
 

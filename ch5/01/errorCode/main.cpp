@@ -18,17 +18,17 @@ int tryOpenFile()
 
     std::cout << std::endl;
 
-    if (theFile.bad())
+    if (theFile.bad()) //Fehler bei Ein-/Ausgabe
     {
         std::cout << "I/O error while reading" << std::endl;
         return 4;
     }
-    else if (theFile.eof())
+    else if (theFile.eof()) //end of file erreicht
     {
         std::cout << "End of file reached successfully" << std::endl;
         return 3;
     }
-    else if (theFile.fail())
+    else if (theFile.fail()) //Datentyp außer ... gefunden
     {
         std::cout << "Non-integer data encountered" << std::endl;
         return 2;

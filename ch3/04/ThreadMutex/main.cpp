@@ -6,8 +6,8 @@ int main()
 {
     std::mutex mutex;
 
-    std::thread t1([&] {
-        mutex.lock();
+    std::thread t1([&] {// & -> verwenden alle das gleiche Lockobjekt im Scope
+        mutex.lock(); //blokiert andere threads, solange mutex nicht freigegeben
         std::cout << "1. Lock." << std::endl;
 
 
@@ -30,7 +30,7 @@ int main()
         mutex.unlock();
     });
 
-    t1.join();
+    t1.join(); //join verhindert, dass threads vor schluss beendet werden -> joined alle threads
     t2.join();
 
     return 0;

@@ -6,7 +6,7 @@ int main()
 {
     std::list<int> myList = {23, 50, 0};
 
-    myList.sort( []( const int a, const int b ) { return a > b; } );
+    myList.sort( []( const int a, const int b ) { return a > b; } ); //definiert allgemein (z.B. void fun...) oder punktuell (NAME.FUNKTION) Funktion 
 
     for ( const auto &elem : myList )
     {
@@ -15,7 +15,7 @@ int main()
 
     std::cout << std::endl;
 
-    myList.sort( []( const int a, const int b ) { return a < b; } );
+    myList.sort( []( const int a, const int b ) { return a < b; } );//mehrfach definierba rmit verschiedenen anwenudngen
 
     for ( const auto &elem : myList )
     {
@@ -27,8 +27,8 @@ int main()
 
     std::list<int> myListDebug = {23, 50, 0};
     std::list<std::string> log;
-    myListDebug.sort( [&]( const int a, const int b )
-                            {
+    myListDebug.sort( [&]( const int a, const int b ) // & sorgt dafür, dass nicht angegebene VParameter als Variablen akzeptiert werden
+                            { //Code in geschweiften Klammern -> Lambda Funktion
                                 if(a<b){
                                     log.push_back("value is smaller");
                                     return true;

@@ -19,10 +19,10 @@ int main()
     int z = 30;
     int result;
 
-    int (*operate)(int, int);
+    int (*operate)(int, int); //Zeigt auf Funktion -> muss als (*NAME) geschrieben werden
 
-    operate = &sum;
-    result = operate(30, 3);
+    operate = &sum; //zeigt auf Funktionsadresse
+    result = operate(30, 3); //ruft Funktion auf
     std::cout << result << std::endl;
 
     operate = &diff;

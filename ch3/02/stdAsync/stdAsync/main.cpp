@@ -24,16 +24,19 @@ int main()
     Concurrent conc;
 
     // Default policy (std::launch::deferred | std::launch::async)
-    auto a1 = std::async(&Concurrent::test1, &conc, 42, "Hello");
+    auto a1 = std::async(&Concurrent::test1, &conc, 42, "Hello"); //Methodenadresse, Instanz, Parameter
+    //entscheidet selbst, ob neuer Thread eröffnet
 
     // Lazy evaluation
-    auto a2 = std::async(std::launch::deferred, &Concurrent::test2, conc, "world!");
+    auto a2 = std::async(std::launch::deferred, &Concurrent::test2, conc, "world!"); //kein neuer Thread -> deferred
 
     // Asynchronous evaluation
-    auto a3 = std::async(std::launch::async, Concurrent(), 43);
+    auto a3 = std::async(std::launch::async, Concurrent(), 43); //erzeugt selbst Objekt
 
     a2.wait(); // We need a2 to be launched
-    std::cout << a3.get() << std::endl;
+    std::cout << a3.get() << std::endl; //wartet bis aufgabe fertig
 
     // Destructor of a1 will force thread of a1 to be launched at latest here.
+
+    //nebenläufige Prozesse könne sich unterbrechen!
 }

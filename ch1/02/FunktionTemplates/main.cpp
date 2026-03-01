@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-template <typename T>
+template <typename T> //sucht sich eigenständig den eingegebenen Datentypen
 T add (const T a, const T b)
 {
     return a+b;

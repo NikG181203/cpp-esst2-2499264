@@ -59,7 +59,7 @@ int main()
     calc.reset(new SumOperation);
     calc->setFirstNumber(x);
     calc->setSecondNumber(y);
-    (*calc)();
+    (*calc)(); //()() Operator -> Funktionsaufruf
 
     std::cout << calc->getResult() << std::endl;
 

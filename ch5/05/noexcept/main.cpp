@@ -9,11 +9,11 @@ void bar() noexcept(true) // == noexcept
 
 void baz() noexcept(false)
 {
-    throw 1;
+    throw 1; //beendet das Programm!
 }
 
 void may_throw();
-void no_throw() noexcept;
+void no_throw() noexcept; //stellt sicher, dass nicht geworfen wurde, false schaltet ab
 
 int main()
 {

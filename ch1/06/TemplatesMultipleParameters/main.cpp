@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-template<typename TYPE1, typename TYPE2>
+template<typename TYPE1, typename TYPE2> //Übergabe verschiedener Datentypen möglich
 void print(TYPE1 a1, TYPE2 a2)
 {
     std::cout << a1 << ", " << a2 << std::endl;

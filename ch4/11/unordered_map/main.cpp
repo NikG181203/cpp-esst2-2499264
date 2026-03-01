@@ -19,7 +19,7 @@ int main()
 {
     // Zehnertabelle, welche den Exponenten der Basis 10 zurückgibt.
     std::map<int, int> potTenTable;
-    std::unordered_map<int, int> unorderedPotTenTable;
+    std::unordered_map<int, int> unorderedPotTenTable; //keine iensehbare Sortierung, aber schneller
 
     std::chrono::duration<double, std::milli> durationOrdered_ms;
     std::chrono::duration<double, std::milli> durationUnordered_ms;

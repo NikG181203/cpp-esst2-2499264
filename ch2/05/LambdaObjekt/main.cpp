@@ -13,9 +13,9 @@ int main()
 
 
     //int (*calc)(int, int);
-    std::function<int(int, int)> calc;
-    auto applySum = [](const int a, const int b) -> int { return a+b; };
-    auto applyDiff = [](const int a, const int b) -> int { return a-b; };
+    std::function<int(int, int)> calc; //ersetzt Zeigerdefinition + interne funktionen existieren
+    auto applySum = [](const int a, const int b) -> int { return a+b; }; //Definition als Lambda statt oberhalb als Funktion
+    auto applyDiff = [](const int a, const int b) -> int { return a-b; }; //Rückgabewerte nach Pfeil
 
 
     calc = applySum;

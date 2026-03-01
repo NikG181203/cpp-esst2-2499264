@@ -12,9 +12,9 @@ int main()
         data.push_back("Test");
         data.push_back("Test2");
 
-        if(data.size() < 10)
+        if(data.size() < 10) //fängt Fehler mit eigener Nachricht ab
         {
-            throw "Sorry, your array is too short.";
+            throw "Sorry, your array is too short."; //throw hat gleichen Datentyp wie catch!
         }
 
         std::cout << data.at(10) << std::endl;

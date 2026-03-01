@@ -3,7 +3,7 @@
 #include <vector>
 #include <exception>
 
-using namespace std;
+using namespace std; //nie in header verwenden -> kann zu problemen bei kopierten dateien führen
 
 class OpenFileException : public exception
 {
@@ -48,7 +48,7 @@ int doSomething()
         }
         processFile();
     }
-    catch (exception &ex)
+    catch (exception &ex) //greift durch vererbung auf richtige klasse zu
     {
         throw ex.what();
     }

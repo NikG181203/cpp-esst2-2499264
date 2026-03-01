@@ -1,13 +1,13 @@
 #include <iostream>
 
-void print()
+void print() //definition für übergabe ohne parameter !!!
 {}
 
-template <typename TYPE, typename... Args>
-void print(TYPE var, Args... args)
+template <typename TYPE, typename... Args> // ... -> Angabe von beliebig langer liste, Args ist Datentyp
+void print(TYPE var, Args... args) //erster Parameter wird rausgetrennt
 {
     std::cout << var;
-    print(args...);
+    print(args...); //rekursiver Aufruf mit restlichen Argumenten
 }
 
 int main()

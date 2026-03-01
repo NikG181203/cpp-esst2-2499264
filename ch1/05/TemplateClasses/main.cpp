@@ -11,7 +11,7 @@ template <class T>
 struct SimpleLinkedList {
     void add(const T value)
     {
-        auto cur = std::make_shared< SimpleNode<T> >();
+        auto cur = std::make_shared< SimpleNode<T> >(); //pointer aus ursprünglicher Klasse übernehmen
         cur->mItem = value;
         cur->mNext = head;
 

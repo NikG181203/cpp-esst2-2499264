@@ -4,9 +4,9 @@
 
 int main()
 {
-    std::set<std::string> names;
+    std::set<std::string> names; //Suchbäume -> keine Gleichen elemente möglich (ähnlich wie set in Python), kein Zugriff über []
 
-    names.insert("John");
+    names.insert("John"); //jedes Element hat maximal 2 zeiger auf anderes element
     names.insert("Steve");
     names.insert("Alan");
     names.insert("Josh");

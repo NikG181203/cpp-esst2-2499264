@@ -7,7 +7,7 @@ T add (const T a, const T b)
     return a+b;
 }
 
-template <>
+template <> //Spezialisierung auf einen Datentyp
 std::string add (const std::string a, const std::string b)
 {
     return a + "Test " + b;

@@ -11,7 +11,7 @@ auto printLine(const std::string &text, const int lim) -> bool
 }
 
 
-auto main() -> int
+auto main() -> int //wie in python mit definiertem Ausgabetypen nach dem Pfeil
 {
     const std::string text = "Hello World";
 

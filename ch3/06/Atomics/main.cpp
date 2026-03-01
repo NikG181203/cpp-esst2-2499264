@@ -5,7 +5,7 @@
 int main()
 {
     {
-        std::atomic<int> c = {0};
+        std::atomic<int> c = {0}; //Lösung des Race Problems ohne MUTEX -> Variable ist nicht teilbar!
 
         std::thread t1([&] {
             std::cout << "1. Lock." << std::endl;

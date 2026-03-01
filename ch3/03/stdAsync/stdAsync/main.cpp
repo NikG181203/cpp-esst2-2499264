@@ -3,12 +3,12 @@
 #include <string>
 #include <mutex>
 
-std::mutex gMutex;
+std::mutex gMutex; //syncronisationsbarrieren
 
 struct Concurrent {
     void test1(const int i, const std::string& str)
     {
-        std::lock_guard<std::mutex> lock(gMutex);
+        std::lock_guard<std::mutex> lock(gMutex); //Variablenübergabe verhindert eine unterbrechung im Prozess
         std::cout << str << ' ' << i << std::endl;
     }
     void test2(const std::string& str)
